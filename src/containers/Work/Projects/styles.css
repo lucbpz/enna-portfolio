@@ -1,0 +1,11 @@
+.Projects {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .Projects {
+    flex-flow: row wrap;
+  }
+}
