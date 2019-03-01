@@ -16,6 +16,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import { Link } from "react-router-dom";
 const drawerWidth = '100%';
 
 const styles = theme => ({
@@ -113,8 +114,12 @@ class PersistentDrawerLeft extends React.Component {
                         <Typography variant="h6" color="inherit" noWrap>
                             Enna Post-Gutierrez
                         </Typography>
-                        <Button color="inherit">Work</Button>
-                        <Button color="inherit">About</Button>
+                        <Link to="/">
+                            <Button color="inherit">Work</Button>
+                        </Link>
+                        <Link to="/about">
+                            <Button color="inherit">About</Button>
+                        </Link>
                     </Toolbar>
                 </AppBar>
                 <Drawer
@@ -133,11 +138,16 @@ class PersistentDrawerLeft extends React.Component {
                     </div>
                     <Divider />
                     <List>
-                        {['Work', 'About'].map((text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemText primary={text} />
+                        <Link to="/" onClick={this.handleDrawerClose}>
+                            <ListItem button key={"Work"}>
+                                <ListItemText primary={"Work"} />
                             </ListItem>
-                        ))}
+                        </Link>
+                        <Link to="/about" onClick={this.handleDrawerClose}>
+                            <ListItem button key={"About"}>
+                                <ListItemText primary={"About"} />
+                            </ListItem>
+                        </Link>
                     </List>
                 </Drawer>
             </div>

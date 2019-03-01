@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: lucbpz/enna-portfolio
+
+media_folder: "public/images"
+public_folder: "images"
+
+collections:
+  - label: "Projects"
+    name: "projects"
+    folder: "_posts/projects"
+    create: true
+    identifier_field: name
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Technologies", name: "technologies used", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
